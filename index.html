@@ -783,7 +783,9 @@
         </div>
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-			<form  method="POST" netlify class="bg-light p-4 p-md-5 contact-form" data-netlify-honeypot="bot-feild" action="/success.html">
+			<form name="contact" method="POST" class="bg-light p-4 p-md-5 contact-form"  action="/success" enctype="application/x-www-form-urlencoded" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+
+			<!-- <form  method="POST" netlify data-netlify-honeypot="bot-feild" action="/success.html"> -->
 
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Your Name" name="name">
