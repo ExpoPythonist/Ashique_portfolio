@@ -4,6 +4,140 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ .project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adds spacing between the boxes */
+  gap: 20px; /* Consistent spacing between boxes */
+  margin-top: 20px;
+}
+
+.project-box {
+  background: rgba(255, 255, 255, 0.1);
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* Three items per row */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Increased image size */
+.project-image {
+  width: 100%; /* Makes the image fully responsive */
+  max-width: 400px; /* Bigger maximum width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover; /* Ensures the image fits perfectly in its container */
+}
+
+.project-box h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.project-box p {
+  font-size: 1rem;
+  color: #555;
+  /* margin-bottom: 15px; */
+}
+
+
+@media (max-width: 768px) {
+  .project-box {
+      width: calc(50% - 20px); /* Two items per row on medium screens */
+  }
+
+  .project-image {
+      max-width: 350px; /* Adjust size for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .project-box {
+      width: 100%; /* Single item per row on small screens */
+  }
+
+  .project-image {
+      max-width: 100%; /* Full width on very small screens */
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Modal Image */
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+}
+
+/* Close Button Styles */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .close {
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+  }
+  .modal-content {
+      max-width: 95%;
+      max-height: 95%;
+  }
+}
+
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
